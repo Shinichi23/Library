@@ -4,9 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library App</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+    <div>
+        <div>
+            <label for="bookTitle">Book title</label>
+            <input type="text" id="bookTitle" placeholder="Title" >
+        </div>
+            <label for="bookAuthor">Book Author</label>
+            <input type="text" id="bookAuthor" placeholder="Author">
+        <div>
+            <label for="bookPages">Book Pages</label>
+            <input type="Number" id="bookPages" placeholder="Pages">
+        </div>
+
+    <br>
+
+        <div>
+            <input type="radio" id="yesRead" name="book-read" value="Yes">
+            <label for="yesRead">Yes</label>
+        <br>
+            <input type="radio" id="noRead" name="book-read" value="No">
+            <label for="noRead">No</label>
+        </div>
+
+    <br>
+
+        <button type="submit" id="getBook">Add Book</button>
+    </div>
+
+
+    <p id="demo"></p>
+
+
+    <script src="main.js"></script>
 </body>
 </html>
