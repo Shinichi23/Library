@@ -1,6 +1,7 @@
 const getBook = document.getElementById("getBook");
 const tableEl = document.querySelector("table");
 const newBook = document.getElementById("newBook");
+const cancelBook = document.getElementById("cancelBook");
 
 let myLibrary = [];
 
@@ -17,6 +18,10 @@ function clearBook() {
   document.getElementById("bookPages").value = "";
   document.getElementById("yesRead").checked = "";
   document.getElementById("noRead").checked = "";
+}
+
+function clearForm() {
+  document.getElementById("bookForm").style.display = "none";
 }
 
 function addBook() {
@@ -36,17 +41,17 @@ function addBook() {
   ).innerHTML = `${theBook.title} ${theBook.author} ${theBook.pages} ${theBook.read}`;
 
   tbodyEl.innerHTML += `
-      <tr>
+      <tr class="table-light">
         <td> ${theBook.title} </td>
         <td> ${theBook.author} </td>
         <td> ${theBook.pages} </td>
         <td id='readOrNot'> ${theBook.read} </td>
-        <td><button class="deleteBtn">Delete</button></td>
+        <td><button class="deleteBtn btn-close"></button></td>
       </tr>
     `;
 
   clearBook();
-  document.getElementById("bookForm").style.display = "none";
+  clearForm();
 }
 
 function deleteBook(e) {
@@ -64,3 +69,4 @@ function displayBook() {
 getBook.addEventListener("click", addBook);
 tableEl.addEventListener("click", deleteBook);
 newBook.addEventListener("click", displayBook);
+cancelBook.addEventListener("click", clearForm);
