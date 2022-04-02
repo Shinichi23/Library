@@ -1,2 +1,1 @@
-# Library Project 
-# The Odin Project 
+# Library Project within The Odin Project 
