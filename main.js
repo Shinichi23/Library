@@ -3,6 +3,11 @@ const tableEl = document.querySelector("table");
 const newBook = document.getElementById("newBook");
 const cancelBook = document.getElementById("cancelBook");
 const welcomePage = document.getElementById("welcomePage");
+const textWrapper = document.querySelector(".ml2");
+textWrapper.innerHTML = textWrapper.textContent.replace(
+  /\S/g,
+  "<span class='letter'>$&</span>"
+);
 
 let myLibrary = [];
 
@@ -69,3 +74,24 @@ getBook.addEventListener("click", addBook);
 tableEl.addEventListener("click", deleteBook);
 newBook.addEventListener("click", displayBook);
 cancelBook.addEventListener("click", clearForm);
+
+// Welcome title animation
+
+anime
+  .timeline({ loop: true })
+  .add({
+    targets: ".ml2 .letter",
+    scale: [4, 1],
+    opacity: [0, 1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 950,
+    delay: (el, i) => 70 * i,
+  })
+  .add({
+    targets: ".ml2",
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000,
+  });
