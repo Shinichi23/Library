@@ -30,3 +30,7 @@ input {
 button {
   display: block;
 }
+
+#bookForm {
+  display: none;
+}

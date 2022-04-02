@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BOOKS LIBRARY</title>
+    <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div>
+    <button id="newBook">Add Book</button>
+    <div id="bookForm">
         <div>
             <label for="bookTitle">Book title</label>
-            <input type="text" id="bookTitle" placeholder="Title" >
+            <input type="text" id="bookTitle" placeholder="Title">
         </div>
             <label for="bookAuthor">Book Author</label>
             <input type="text" id="bookAuthor" placeholder="Author">
@@ -24,17 +26,16 @@
     <br>
 
         <div>
-            <input type="radio" id="yesRead" name="book-read" value="Yes">
+            <input type="radio" id="yesRead" name="bookRead" value="Yes">
             <label for="yesRead">Yes</label>
         <br>
-            <input type="radio" id="noRead" name="book-read" value="No">
+            <input type="radio" id="noRead" name="bookRead" value="No">
             <label for="noRead">No</label>
         </div>
 
     <br>
 
         <button id="getBook">Add Book</button>
-        <button id="clearBook">Clear</button>
     </div>
 
     <div>
@@ -57,6 +58,6 @@
     <p id="demo"></p>
 
 
-    <script src="main.js"></script>
+    
 </body>
 </html>

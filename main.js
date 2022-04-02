@@ -1,6 +1,6 @@
 const getBook = document.getElementById("getBook");
-const clearB = document.getElementById("clearBook");
 const tableEl = document.querySelector("table");
+const newBook = document.getElementById("newBook");
 
 let myLibrary = [];
 
@@ -11,13 +11,22 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
+function clearBook() {
+  document.getElementById("bookTitle").value = "";
+  document.getElementById("bookAuthor").value = "";
+  document.getElementById("bookPages").value = "";
+  document.getElementById("yesRead").checked = "";
+  document.getElementById("noRead").checked = "";
+}
+
 function addBook() {
   let bookTitle = document.getElementById("bookTitle").value;
   let bookAuthor = document.getElementById("bookAuthor").value;
   let bookPages = document.getElementById("bookPages").value;
   let bookRead = document.querySelector(
-    'input[name = "book-read"]:checked'
+    'input[name = "bookRead"]:checked'
   ).value;
+
   const tbodyEl = document.querySelector("tbody");
 
   const theBook = new Book(bookTitle, bookAuthor, bookPages, bookRead);
@@ -35,6 +44,9 @@ function addBook() {
         <td><button class="deleteBtn">Delete</button></td>
       </tr>
     `;
+
+  clearBook();
+  document.getElementById("bookForm").style.display = "none";
 }
 
 function deleteBook(e) {
@@ -45,12 +57,10 @@ function deleteBook(e) {
   btn.closest("tr").remove();
 }
 
-function clearBook() {
-  document.getElementById("bookTitle").value = "";
-  document.getElementById("bookAuthor").value = "";
-  document.getElementById("bookPages").value = "";
+function displayBook() {
+  document.getElementById("bookForm").style.display = "block";
 }
 
 getBook.addEventListener("click", addBook);
-clearB.addEventListener("click", clearBook);
 tableEl.addEventListener("click", deleteBook);
+newBook.addEventListener("click", displayBook);
