@@ -9,7 +9,7 @@ textWrapper.innerHTML = textWrapper.textContent.replace(
   "<span class='letter'>$&</span>"
 );
 
-let myLibrary = [];
+// let myLibrary = [];
 
 function Book(title, author, pages, read) {
   this.title = title;
