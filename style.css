@@ -30,3 +30,8 @@ button {
 #bookForm {
   display: none;
 }
+
+#welcomePage {
+  margin-top: 200px;
+  margin-bottom: 200px;
+}

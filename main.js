@@ -2,6 +2,7 @@ const getBook = document.getElementById("getBook");
 const tableEl = document.querySelector("table");
 const newBook = document.getElementById("newBook");
 const cancelBook = document.getElementById("cancelBook");
+const welcomePage = document.getElementById("welcomePage");
 
 let myLibrary = [];
 
@@ -22,6 +23,7 @@ function clearBook() {
 
 function clearForm() {
   document.getElementById("bookForm").style.display = "none";
+  document.getElementById("welcomePage").style.display = "block";
 }
 
 function addBook() {
@@ -35,10 +37,6 @@ function addBook() {
   const tbodyEl = document.querySelector("tbody");
 
   const theBook = new Book(bookTitle, bookAuthor, bookPages, bookRead);
-
-  document.getElementById(
-    "demo"
-  ).innerHTML = `${theBook.title} ${theBook.author} ${theBook.pages} ${theBook.read}`;
 
   tbodyEl.innerHTML += `
       <tr class="table-light">
@@ -64,6 +62,7 @@ function deleteBook(e) {
 
 function displayBook() {
   document.getElementById("bookForm").style.display = "block";
+  document.getElementById("welcomePage").style.display = "none";
 }
 
 getBook.addEventListener("click", addBook);
